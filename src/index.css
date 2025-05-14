@@ -5,6 +5,7 @@
 @layer base {
   body {
     @apply bg-[#2A2A2A] text-white;
+    background: linear-gradient(135deg, #2A2A2A 0%, #1a1a1a 100%);
   }
 }
 
@@ -14,10 +15,39 @@
   }
   
   .glass-input {
-    @apply bg-white/[0.08] border-white/15 text-white placeholder-white/50 focus:border-white/30 focus:ring-white/20;
+    @apply bg-white/[0.08] border border-white/15 rounded-lg px-4 py-2.5 text-white placeholder-white/50 
+    focus:border-white/30 focus:ring-2 focus:ring-white/20 focus:ring-opacity-50 focus:outline-none
+    transition-all duration-200;
   }
   
   .glass-button {
-    @apply bg-white/15 hover:bg-white/25 text-white transition-colors duration-200;
+    @apply bg-white/15 hover:bg-white/25 text-white px-6 py-2.5 rounded-lg 
+    border border-white/20 hover:border-white/30
+    transition-all duration-200 backdrop-blur-sm;
+  }
+
+  .glass-section {
+    @apply bg-white/[0.07] backdrop-blur-sm border border-white/10 rounded-lg overflow-hidden;
+  }
+
+  .glass-section-header {
+    @apply bg-black/20 backdrop-blur-sm px-4 py-3 border-b border-white/10 
+    flex justify-between items-center cursor-pointer hover:bg-black/30 transition-colors;
+  }
+
+  .glass-section-content {
+    @apply p-6 bg-black/10;
+  }
+
+  .glass-label {
+    @apply block text-sm font-medium text-white/80 mb-1;
+  }
+
+  .glass-field-hint {
+    @apply mt-1.5 text-xs text-white/50;
+  }
+
+  .glass-error {
+    @apply mt-1.5 text-sm text-red-400;
   }
 }
